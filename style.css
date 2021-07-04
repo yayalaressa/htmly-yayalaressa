@@ -1,0 +1,342 @@
+/* CSS Design Yaya Laressa */
+h2 {
+  font-size: 1.355em;
+  font-weight: 900;
+}
+
+/* The overlay effect with black background */
+
+.modal-search {
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.9);
+  /* Black with a little bit see-through */
+}
+
+.modal-content-search {
+  background-color: transparent;
+  border: none;
+}
+
+.close-search {
+  position: absolute;
+  right: 0.3em;
+  top: 0.3em;
+  width: 32px;
+  height: 32px;
+}
+
+.close-search:before, .close-search:after {
+  position: absolute;
+  left: 15px;
+  content: ' ';
+  height: 33px;
+  width: 1px;
+  background-color: #495057;
+}
+
+.close-search:before {
+  transform: rotate(45deg);
+}
+
+.close-search:after {
+  transform: rotate(-45deg);
+}
+
+.navbar-toggler:focus {
+  outline: none;
+}
+
+.navbar-toggler {
+  border: 0;
+  font-size: 1rem;
+  padding: 0.25rem 0;
+}
+
+.navbar-toggler > .menu::before {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  margin-right: 0.955em;
+  vertical-align: baseline;
+  content: "\f107";
+  font-family: FontAwesome;
+  font-style: normal;
+  font-weight: bold;
+  text-decoration: inherit;
+}
+
+.navbar-toggler:not(.collapsed) > .menu::before {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  margin-right: 0.955em;
+  vertical-align: baseline;
+  content: "\f106";
+  font-family: FontAwesome;
+  font-style: normal;
+  font-weight: bold;
+  text-decoration: inherit;
+}
+
+.navbar-toggler.collapsed > .menu::before {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  margin-right: 0.955em;
+  vertical-align: baseline;
+  content: "\f107";
+  font-family: FontAwesome;
+  font-style: normal;
+  font-weight: bold;
+  text-decoration: inherit;
+}
+
+.nav-link:focus,
+.nav-link:hover {
+  text-decoration: underline;
+}
+
+.card {
+  border-radius: 0;
+}
+
+.page-header {
+  margin-bottom: 1.5em;
+  border: none;
+  border-left: 3px solid #007bff;
+  border-radius: none;
+}
+
+.taxonomy-description {
+  padding-left: 1.5em;
+}
+
+.popular > ul {
+  list-style: none; /* Remove list bullets */
+  counter-reset: steps;
+  margin: 0;
+  padding: 0;
+}
+
+.popular > ul li {
+  counter-increment: steps;
+}
+
+.popular > ul li::before {
+  margin-right: 0.3em;
+  content: "[" counter(steps) "]";
+  font-style: normal;
+  font-weight: normal;
+  text-decoration: inherit;
+}
+
+.popular-tag > ul {
+  list-style: none; /* Remove list bullets */
+  margin: 0;
+  padding: 0;
+}
+
+.popular-tag > ul li::before {
+  margin-right: 0.3em;
+  content: "#";
+  font-style: normal;
+  font-weight: normal;
+  text-decoration: inherit;
+}
+
+.archive > ul {
+  list-style: none; /* Remove list bullets */
+  margin: 0;
+  padding: 0;
+}
+
+.archive > ul li::before {
+  margin-right: 0.3em;
+  content: "\f114";
+  font-family: FontAwesome;
+  font-style: normal;
+  font-weight: normal;
+  text-decoration: inherit;
+}
+
+.category,
+.tag a {
+  text-transform: uppercase;
+}
+
+.tag a {
+  display: inline-block;
+  padding: 0.25em 0.4em;
+  font-size: 75%;
+  font-weight: normal;
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: 0;
+  color: #007bff;
+  border: 1px solid #007bff;
+}
+
+.tag a::before {
+  content: "#";
+}
+
+.footer .nav {
+  margin-right: 1em;
+  margin-left: 1em;
+}
+
+.footer .item a {
+  font-size: 0.9em;
+}
+
+.footer .item::after {
+  color: #007bff;
+  margin-right: 0.3em;
+  margin-left: 0.3em;
+  content: "/";
+}
+
+.footer .item:last-child::after {
+  margin-right: 0;
+  margin-left: 0.3em;
+  content: "";
+}
+
+.breadcrumb {
+  font-size: 80%;
+  background: none;
+  padding: 0;
+}
+
+.search input,
+.search input:focus,
+.search input:hover {
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid #495057;
+  border-radius: 0;
+  outline: none;
+  box-shadow: none;
+}
+
+.search-button .btn-outline-secondary {
+  border: none;
+  border-bottom: 1px solid #495057;
+  border-radius: 0;
+}
+
+.search-button .btn-outline-secondary:hover {
+  color: #fff;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid #495057;
+}
+
+.search-button .btn-outline-secondary:focus, .search-button .btn-outline-secondary.focus {
+  box-shadow: none;
+}
+
+/* Featured Post */
+
+.featured-post {
+  margin-bottom: 0.5em;
+}
+
+.card-body h2 a:hover {
+  text-decoration: underline;
+}
+
+.card-link:hover {
+  text-decoration: underline;
+}
+
+.badge {
+  border-radius: 0;
+}
+
+@media (min-width: 992px) {
+  .sidebar {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 5.6em;
+    z-index: 1020;
+  }
+}
+
+.not-found-title {
+  font-size: 3em;
+  font-weight: 900;
+  margin-top: 1em;
+}
+
+.not-found-subtitle {
+  font-size: 1.2em;
+}
+
+.page-link {
+  border: 0;
+}
+
+.page-link:hover,
+.page-link:focus {
+  background: transparent;
+  border-color: none;
+  outline: none;
+  box-shadow: none;
+  text-decoration: underline;
+}
+
+blockquote {
+  font-weight: 700;
+  font-style: italic;
+}
+
+blockquote:before {
+  font-family: Georgia, serif;
+  content: open-quote;
+  font-size: 3.5em;
+  line-height: 0.1em;
+  margin-right: 0.15em;
+  vertical-align: -0.4em;
+}
+
+blockquote p {
+  display: inline;
+}
+
+/* Pre Code */
+
+pre code {
+  font-family: "Inconsolata", "Monaco", "Consolas", "Andale Mono",
+    "Bitstream Vera Sans Mono", "Courier New", Courier, monospace;
+  display: block;
+  padding: 15px 16px 14px;
+  background-color: #f8f9fa;
+  border-left: 2px solid #007bff;
+  overflow-x: auto;
+  font-size: 13px;
+  line-height: 19px;
+  color: #000;
+}
+
+/* Back To Top */
+
+#back-to-top {
+  background: #007bff;
+  color: #ffffff;
+  padding: 8px 10px;
+}
+
+.back-to-top {
+  position: fixed !important;
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  z-index: 999;
+}
