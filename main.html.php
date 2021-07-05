@@ -27,7 +27,7 @@
                     <?php else: ?>
                         <h2 class="mt-1 mb-1"><a href="<?php echo $p->url;?>" rel="bookmark"><?php echo $p->title;?></a></h2>
                     <?php endif; ?>
-                    <small class="text-muted mb-2"><time><?php echo timeago($p->date) ?></time></small>
+                    <small class="text-muted mb-2"><time><?php echo format_date($p->date) ?></time></small>
                     <div class="card-text mt-auto">
                         <?php echo get_teaser($p->body, $p->url); ?>
                     </div>

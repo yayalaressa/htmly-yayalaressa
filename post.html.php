@@ -48,7 +48,7 @@
 <a href="<?php echo $p->categoryUrl; ?>" class="badge badge-secondary category"><?php echo str_replace('-', ' ', $p->ct); ?></a>
 <h2 class="mt-1 mb-2"><?php echo $p->title; ?></h2>
 <div class="mb-2">
-    <small class="text-muted"><time><?php echo timeago($p->date) ?></time></small>
+    <small class="text-muted"><time><?php echo format_date($p->date) ?></time></small>
 </div>
 <div class="share-this mb-3">
 	<!-- ShareThis BEGIN -->
