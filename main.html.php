@@ -18,9 +18,7 @@
 <!-- Main Posts -->
 <?php foreach ($posts as $p): ?>
     <li class="media mb-4">
-        <div class="media-body">
-            <div class="card">
-                <div class="card-body">
+        <div class="media-body main-post">
                     <a href="<?php echo $p->categoryUrl; ?>" class="badge badge-secondary category"><?php echo str_replace('-', ' ', $p->ct); ?></a>
                     <?php if (!empty($p->link)): ?>
                     	<h2 class="mt-1 mb-1"><a href="<?php echo $p->link;?>" target="_blank" rel="bookmark"><?php echo $p->title;?> <i class="fa fa-external-link"></i></a></h2>
@@ -30,9 +28,8 @@
                     <small class="text-muted mb-2"><time><?php echo format_date($p->date) ?></time></small>
                     <div class="card-text mt-auto">
                         <?php echo get_teaser($p->body, $p->url); ?>
+                        <?php if (config('teaser.type') === 'trimmed'):?><a class="card-link" href="<?php echo $p->url; ?>"><?php echo config('read.more'); ?> →</a><?php endif;?>
                     </div>
-                </div>
-            </div>
         </div>
     </li>
 <?php endforeach; ?>

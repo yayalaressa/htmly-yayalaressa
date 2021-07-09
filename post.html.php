@@ -66,6 +66,26 @@
 
 <?php if(facebook() || disqus()): ?>
 <!-- Comment Area -->
+<?php if(facebook()): ?>
+<div id="fb-root"></div>
+<script type="text/javascript">
+var facebook_appid = '<?php echo config('fb.appid'); ?>';
+var language = '<?php echo config('language'); ?>';
+function facebook() {
+  (function (d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s);
+    js.id = id;
+    js.src = "//connect.facebook.net/" + language + "/all.js#xfbml=1&appId=" + facebook_appid;
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+  
+  document.getElementById("facebook_thread").style.visibility = "hidden";
+}
+</script>
+<style>.fb-comments, .fb_iframe_widget span, .fb-comments iframe {width: 100%!important;}</style>
+<?php endif; ?>
 <?php if(disqus()): ?>
 <script type="text/javascript">
 var disqus_shortname = '<?php echo config('disqus.shortname'); ?>';
@@ -88,10 +108,11 @@ function disqus() {
 <?php endif; ?>
 <div class="comments-area my-2" id="comments">
   <?php if(facebook()): ?>
-  <div class="fb-comments" data-href="<?php echo $p->url; ?>" data-numposts="<?php echo config('fb.num'); ?>" data-colorscheme="<?php echo config('fb.color'); ?>" data-width="100%"></div>
+  <div id="facebook_thread" class="text-center"><a id="load_comments" class="card-link" href="#" onclick="facebook();return false;">Load comments &rarr;</a></div>
+  <div class="fb-comments" data-lazy="true" data-href="<?php echo $p->url; ?>" data-numposts="<?php echo config('fb.num'); ?>" data-colorscheme="<?php echo config('fb.color'); ?>" data-width="100%"></div>
   <?php endif; ?>
   <?php if (disqus()): ?>
-	<div id="disqus_thread" class="text-center"><a class="card-link" href="#" onclick="disqus();return false;">Load comments &rarr;</a></div>
+	<div id="disqus_thread" class="text-center"><a id="load_comments" class="card-link" href="#" onclick="disqus();return false;">Load comments &rarr;</a></div>
   <?php endif; ?>
 </div>
 <?php endif; ?>

@@ -248,10 +248,6 @@ h2 {
   margin-bottom: 0.5em;
 }
 
-.card-body h2 a:hover {
-  text-decoration: underline;
-}
-
 .card-link:hover {
   text-decoration: underline;
 }
